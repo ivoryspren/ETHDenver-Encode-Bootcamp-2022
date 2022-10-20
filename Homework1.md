@@ -10,13 +10,12 @@ How could you prevent them from cheating ?
 Answer:
 
 Essential components:
-1. Game Rules - a written set given to each player
-2. Player Order - a written order of players' turns in the game
+1. Game Rules - a written set given to each player  (smart contract!)
+2. Player Order - a written order of players' turns in the game (function in a smart contract)
 
 How would people cheat?
-1. Attempt to alter the game rules
-2. Attempt to play out of the established order
+1. Attempt to alter the game rules by getting enough players to agree to vote on altering the rules (smart contract)
+2. Attempt to create more players in the game by multiple addresses
 
 How could you prevent them from cheating?
-1. Each player is responsible to hold each other accountable by their actions in the game to verify that the game rules and player order are always followed. 
-2. Any player can challenge another player by verifying if a game rule or player order was not followed
+1. Write a more secure contract for the game rules and operations
