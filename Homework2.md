@@ -13,9 +13,9 @@ Homework 2:
 
 3. What is special about these accounts :
 
-0x1db3439a222c519ab44bb1144fc28167b4fa6ee6 : Staking contract for ETH2
+0x1db3439a222c519ab44bb1144fc28167b4fa6ee6 : Vitalik's account
 
-0x000000000000000000000000000000000000dEaD : null address to deploy contracts to EVM
+0x000000000000000000000000000000000000dEaD : burn/null address to deploy contracts to EVM
 
 4. Using remix add this contract as a source file (https://gist.github.com/extropyCoder/77487267da199320fb9c852cfde70fb1)
 
