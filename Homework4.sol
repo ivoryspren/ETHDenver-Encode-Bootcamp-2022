@@ -7,7 +7,7 @@ contract VolcanoCoin {
     uint totalSupply = 10000;
     address owner;
     mapping(address => uint) public balances;
-    mapping(address => Payment[]) public userTransfers;
+    mapping(address => Payment[]) public userPaymentRecords;
 
     constructor() {
         owner = msg.sender;
@@ -26,7 +26,7 @@ contract VolcanoCoin {
     }
 
     event supplyIncreased(uint);
-    event transferComplete(address indexed _to, uint _amount);
+    event paymentTransferComplete(address _to, uint _amount);
 
     function getTotalSupply() public view returns (uint){
         return totalSupply;
@@ -35,6 +35,7 @@ contract VolcanoCoin {
     function increaseTotalSupply() public onlyOwner {
       totalSupply += 1000;
       emit supplyIncreased(totalSupply);
+      //note that this does not increase the owner's balance
     }
 
     function transfer(address _to, uint _amount) public {
@@ -42,12 +43,13 @@ contract VolcanoCoin {
         require(balance >= _amount);
         balances[msg.sender] -= _amount;
         balances[_to] += _amount;
-        userTransfers[msg.sender].push(Payment({to: _to, amount: _amount}));
-        // assign payment to msg.sender's array of payments
-        emit transferComplete(_to, _amount);
+        userPaymentRecords[msg.sender].push(Payment({to: _to, amount: _amount}));
+        // adds payment to msg.sender's array of payments
+        emit paymentTransferComplete(_to, _amount);
     }
 
-    function getuserTransfers(address userAddress) public view returns (Payment[] memory) {
-        return userTransfers[userAddress];
+    function getuserPaymentRecords(address userAddress) public view returns (Payment[] memory) {
+        return userPaymentRecords[userAddress];
+        //print the array of payments made by a specific address
     }
 }
