@@ -26,7 +26,7 @@ contract VolcanoCoin {
     }
 
     event supplyIncreased(uint);
-    event paymentTransferComplete(address _to, uint _amount);
+    event paymentTransferComplete(address, uint);
 
     function getTotalSupply() public view returns (uint){
         return totalSupply;
