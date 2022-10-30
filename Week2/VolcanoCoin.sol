@@ -10,7 +10,7 @@ contract VolcanoCoin is Ownable {
 
     uint totalSupply = 10000;
     mapping(address => uint) public balances;
-    mapping(address => Payment[]) public userPaymentRecords;
+    mapping(address => Payment[]) userPaymentRecords;
 
     constructor() {
         balances[owner()] = totalSupply;
