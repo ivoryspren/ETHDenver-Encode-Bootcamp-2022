@@ -1,0 +1,3 @@
+Homework 13
+In preparation for tomorrows lesson, discuss in your teams secure approaches to random
+values in contracts.
